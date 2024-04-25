@@ -9,7 +9,7 @@ import logsRouter from './routes/logsRouter.js';
 import loginRouter from './routes/loginRoutes.js';
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const port = 4000;
 
 app.use(express.json());
 app.use(morgan('dev'));
@@ -30,8 +30,8 @@ app.use('/logs', logsRouter);
 
 mySqlPool.query('SELECT 1').then(() => {
   console.log(chalk.bgWhite.green('MYSQL DB Connected'));
-  app.listen(PORT, () => {
-    console.log(`Application is running on port ${PORT}.`);
+  app.listen(port, () => {
+    console.log(`Application is running on port 4000.`);
   });
 }).catch((error) => {
   console.log(error);
